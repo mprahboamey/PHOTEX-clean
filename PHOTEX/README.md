@@ -2,13 +2,15 @@
 
 **AI inference, performed by light.**
 
-PHOTEX is an optical neural network concept focused on photonic inference using volumetric holographic media. Instead of performing inference with switching transistors alone, PHOTEX explores computation through wave propagation and interference. People land here from searches about optical neural networks, volumetric inference, holographic AI accelerators, and photonic transformer analogues; citations for this documentation bundle live in [`CITATION.cff`](CITATION.cff).
+PHOTEX is a personal notebook posing an optical neural network picture: inference imagined through volumetric holographic media, wave propagation, and interference—not only through transistor bookkeeping. Documentation and toy benchmark framing live here because I wanted somewhere to anchor the optics math while it’s still messy.
 
-Project lead: **Mprah-Boamey** — profile hub `https://github.com/mprahboamey`.
+Citation metadata for whoever indexes that sort of thing: [`CITATION.cff`](CITATION.cff).
+
+**Mprah-Boamey** — messy scratchpad collection: github.com/mprahboamey
 
 ## Project Status
 
-This repository currently contains technical documentation and benchmark assumptions for the PHOTEX architecture. It is research-stage and documentation-first.
+Technical documentation plus benchmark-ish assumptions spelled out openly. Half lab report, half daydream sketch.
 
 ## At a Glance
 
@@ -21,14 +23,14 @@ This repository currently contains technical documentation and benchmark assumpt
 
 > Values shown for PHOTEX are architecture projections/simulated assumptions as documented in this repository.
 
-## What We Are Building
+## Sketch of the architecture
 
-PHOTEX proposes a compact photonic inference accelerator that uses volumetric holographic crystals (stacked in 3D and angle-addressed) to store and execute model weights.
+Imagine a compact photonic story where volumetric holographic crystals (stacked in 3D and angle-addressed) hold model weights encoded as phase-ish structures—not a roadmap slide, just the picture in my head laid out cleanly.
 
-- **Wave interference as compute**: key operations are executed optically instead of transistor-based matrix pipelines.
-- **Extreme parameter density**: angular and spatial multiplexing target much higher density per unit volume.
-- **Nanosecond-class inference path**: forward-pass latency is driven by optical propagation distance.
-- **Low energy operation**: photonic compute is intended to operate in picojoule-to-femtojoule regimes.
+- **Wave interference as compute**: key pieces argued optically instead of only transistor matrix pipelines.
+- **Parameter packing story**: angular and spatial multiplexing in the thought experiment crank density per volume.
+- **Latency picture**: propagation distance sets a tiny forward-pass intuition.
+- **Energy picture**: photonic folklore lands in picojoule-ish scale in the scribbles.
 
 ## Documentation
 
@@ -36,39 +38,37 @@ PHOTEX proposes a compact photonic inference accelerator that uses volumetric ho
 |----------|-------------|
 | [Wave Propagation and ASM](docs/01_Wave_Propagation_and_ASM.md) | Helmholtz equation, angular spectrum propagation, and optical attention foundations |
 | [Benchmark Results](docs/02_Benchmark_Results.md) | Simulated comparisons for parameter density, energy, throughput, and latency |
-| [Integration with AI Pipelines](docs/03_Integration_with_AI_Pipelines.md) | How PHOTEX can fit into existing AI infrastructure as an inference backend |
-| [Digital Architecture](docs/04_Digital_Architecture.md) | Required digital control systems and scaling behavior outside the crystal |
+| [Integration with AI Pipelines](docs/03_Integration_with_AI_Pipelines.md) | Loose notes on plugging the thought experiment into ordinary AI stacks |
+| [Digital Architecture](docs/04_Digital_Architecture.md) | Control planes and digital bits that would sit outside any crystal toy model |
 
-## Related Repository
+## Related repository
 
-For a software-first implementation of virtual volumetric weight representation, see:
+The software-only tile bank experiment lives here if you want weights repacked into mmap tiles without the full optics folktale layer:
 
-- [HoloWeights](https://github.com/mprahboamey/holoweights)
+[HoloWeights](https://github.com/mprahboamey/holoweights)
 
-PHOTEX focuses on the broader photonic architecture and math narrative. HoloWeights focuses on practical digital representation and serving behavior.
+## How it hangs together (at a high level)
 
-## How It Works
-
-1. **Wave optics as compute**: light propagates through media using the Angular Spectrum Method (ASM), with FFT-based complexity.
-2. **Weights encoded as phase structures**: parameters are stored as holographic phase patterns.
-3. **Attention via interference**: interference terms such as `Re(E1 * conj(E2))` provide physical correlation behavior.
-4. **Capacity scales with volume**: storage is volumetric rather than limited to planar die area.
+1. **Wave optics as compute**: ASM-style propagation, FFT complexity, hand-wavy but written down.
+2. **Weights as phase structures**: parameters live in holographic-phase stories in the sketch.
+3. **Attention via interference**: interference terms like `Re(E1 * conj(E2))` as the physical correlation picture.
+4. **Volume not just a die**: storage metaphors lean 3D rather than a single plane.
 
 ## Contributing
 
-Contributions that improve technical clarity are welcome.
+If something is unclear and you want to clarify wording, cool.
 
 1. Fork the repository.
-2. Create a feature branch.
-3. Open a pull request with a concise description of your change.
+2. Branch.
+3. Pull request with a short note about what you tweaked.
 
 ## License
 
-This project is licensed under the MIT License. See [`LICENSE`](LICENSE).
+MIT. See [`LICENSE`](LICENSE).
 
 ## References
 
-These references provide background context and do not imply external validation of PHOTEX results.
+Background reading; nothing here claims outside validation of PHOTEX numbers.
 
 - Goodman, J. W. (2005). *Introduction to Fourier Optics*
 - Lin, X., et al. (2018). "All-optical machine learning using diffractive deep neural networks." *Science*
