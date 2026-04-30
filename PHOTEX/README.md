@@ -4,6 +4,8 @@
 
 PHOTEX is an optical neural network concept focused on photonic inference using volumetric holographic media. Instead of performing inference with switching transistors, PHOTEX explores computation through wave propagation and interference.
 
+Project lead: **Mprah-Boamey**.
+
 ## Project Status
 
 This repository currently contains technical documentation and benchmark assumptions for the PHOTEX architecture. It is research-stage and documentation-first.
@@ -36,6 +38,14 @@ PHOTEX proposes a compact photonic inference accelerator that uses volumetric ho
 | [Benchmark Results](docs/02_Benchmark_Results.md) | Simulated comparisons for parameter density, energy, throughput, and latency |
 | [Integration with AI Pipelines](docs/03_Integration_with_AI_Pipelines.md) | How PHOTEX can fit into existing AI infrastructure as an inference backend |
 | [Digital Architecture](docs/04_Digital_Architecture.md) | Required digital control systems and scaling behavior outside the crystal |
+
+## Related Repository
+
+For a software-first implementation of virtual volumetric weight representation, see:
+
+- [HoloWeights](https://github.com/mprahboamey/holoweights)
+
+PHOTEX focuses on the broader photonic architecture and math narrative. HoloWeights focuses on practical digital representation and serving behavior.
 
 ## How It Works
 
