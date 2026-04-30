@@ -2,17 +2,17 @@
 
 **AI inference, performed by light.**
 
-PHOTEX is a personal notebook posing an optical neural network picture: inference imagined through volumetric holographic media, wave propagation, and interference—not only through transistor bookkeeping. Documentation and toy benchmark framing live here because I wanted somewhere to anchor the optics math while it’s still messy.
+Personal notebook chaining optical neural folklore together. Inference imagines holographic slabs, beam steering, propagation drama instead of transistor monotony alone. Documentation piles here because scribbling optics math beats losing scraps across random drives.
 
-Citation metadata for whoever indexes that sort of thing: [`CITATION.cff`](CITATION.cff).
+Citation stub for indexes that care: [`CITATION.cff`](CITATION.cff).
 
-**Mprah-Boamey** — messy scratchpad collection: github.com/mprahboamey
+**Mprah-Boamey** · scratchpad index `github.com/mprahboamey`
 
-## Project Status
+## Project status
 
-Technical documentation plus benchmark-ish assumptions spelled out openly. Half lab report, half daydream sketch.
+Half lab report, half speculative sketch. Benchmark tables mix projections with honest GPU baselines. Read footnotes before tweeting absolutes.
 
-## At a Glance
+## At a glance
 
 | Metric | NVIDIA H100 | PHOTEX (Projected) |
 |--------|-------------|--------------------|
@@ -21,54 +21,45 @@ Technical documentation plus benchmark-ish assumptions spelled out openly. Half 
 | **Energy per pass** | ~mJ | ~pJ-fJ |
 | **Throughput** | 100-150 TPS | **7.5M-375M TPS** |
 
-> Values shown for PHOTEX are architecture projections/simulated assumptions as documented in this repository.
+> Values marked PHOTEX stay architecture projections or simulator assumptions referenced inside this repository.
 
-## Sketch of the architecture
+## Architecture sketch
 
-Imagine a compact photonic story where volumetric holographic crystals (stacked in 3D and angle-addressed) hold model weights encoded as phase-ish structures—not a roadmap slide, just the picture in my head laid out cleanly.
+Picture tiny photonic story where volumetric holographic crystals stack in 3D and angle addressing fans beams through phase masks encoding weights. Not a roadmap slide. Just the cartoon I stare at late nights.
 
-- **Wave interference as compute**: key pieces argued optically instead of only transistor matrix pipelines.
-- **Parameter packing story**: angular and spatial multiplexing in the thought experiment crank density per volume.
-- **Latency picture**: propagation distance sets a tiny forward-pass intuition.
-- **Energy picture**: photonic folklore lands in picojoule-ish scale in the scribbles.
+Story beats include interference acting like compute primitives, multiplexed layers juicing parameter density anecdotes, propagation distance hinting latency intuition, optimistic energy anecdotes sitting near picojoule folklore.
+
+Detailed math links below.
 
 ## Documentation
 
-| Document | Description |
-|----------|-------------|
-| [Wave Propagation and ASM](docs/01_Wave_Propagation_and_ASM.md) | Helmholtz equation, angular spectrum propagation, and optical attention foundations |
-| [Benchmark Results](docs/02_Benchmark_Results.md) | Simulated comparisons for parameter density, energy, throughput, and latency |
-| [Integration with AI Pipelines](docs/03_Integration_with_AI_Pipelines.md) | Loose notes on plugging the thought experiment into ordinary AI stacks |
-| [Digital Architecture](docs/04_Digital_Architecture.md) | Control planes and digital bits that would sit outside any crystal toy model |
+| Doc | Rough contents |
+|-----|----------------|
+| [Wave Propagation + ASM](docs/01_Wave_Propagation_and_ASM.md) | Helmholtz, angular spectrum bookkeeping, interference attention chatter |
+| [Benchmark Results](docs/02_Benchmark_Results.md) | Parameter density fantasies stacked against NVIDIA |
+| [Integration chatter](docs/03_Integration_with_AI_Pipelines.md) | Imaginary splice points beside ordinary AI tooling |
+| [Digital Architecture](docs/04_Digital_Architecture.md) | Which chores stay mundane silicon versus crystal dreams |
 
-## Related repository
+### Related mmap tile tinkering
 
-The software-only tile bank experiment lives here if you want weights repacked into mmap tiles without the full optics folktale layer:
+Software-only tiling experiments without photonics cosplay wander here:
 
 [HoloWeights](https://github.com/mprahboamey/holoweights)
 
-## How it hangs together (at a high level)
+High-level mnemonic stays simple. ASM FFT chain describes propagation. Phase masks imitate stored parameters. Interference behaves like fancier dot correlations. Volume beats single-plane jealousy inside the thought experiment alone.
 
-1. **Wave optics as compute**: ASM-style propagation, FFT complexity, hand-wavy but written down.
-2. **Weights as phase structures**: parameters live in holographic-phase stories in the sketch.
-3. **Attention via interference**: interference terms like `Re(E1 * conj(E2))` as the physical correlation picture.
-4. **Volume not just a die**: storage metaphors lean 3D rather than a single plane.
+Forks that clarify wording gladly accepted. Send small PRs explaining what annoyed you.
 
 ## Contributing
 
-If something is unclear and you want to clarify wording, cool.
-
-1. Fork the repository.
-2. Branch.
-3. Pull request with a short note about what you tweaked.
+Issues and PR notes welcome when something reads wrong.
 
 ## License
 
-MIT. See [`LICENSE`](LICENSE).
+MIT. Full text lives in [`LICENSE`](LICENSE).
+
 
 ## References
-
-Background reading; nothing here claims outside validation of PHOTEX numbers.
 
 - Goodman, J. W. (2005). *Introduction to Fourier Optics*
 - Lin, X., et al. (2018). "All-optical machine learning using diffractive deep neural networks." *Science*

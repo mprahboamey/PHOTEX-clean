@@ -1,54 +1,54 @@
 # Digital Architecture
 
-The PHOTEX crystal handles matrix multiplications — the dominant, quadratically-scaling cost of transformer inference. A thin digital shell wraps the optical core to handle a small set of operations that are structurally incompatible with passive light propagation.
+PHOTEX fantasy hands gnarly matrix multiplications to sculpted light while admitting several transformer rituals refuse to cooperate without humble silicon scaffolding. Thin digital halo stays because nobody convinced interference alone to politely normalize softmax rows yet without cheating.
 
 ---
 
-## What Stays Digital
+## What stays stubbornly digital
 
-Not everything in a transformer can be expressed as light passing through a medium. An operation stays digital if it requires knowing the current input's statistics, requires a global reduction over all values before producing any output, or is a discrete lookup rather than a continuous transformation.
+Some transforms demand local statistics gathered per token before downstream pixels exist. Others need global reductions across sequences before softmax makes sense as probability table. Embedding lookup remains discrete hopping between table rows unlike continuous slabs light loves.
 
-In practice, this means:
+Practically categorized:
 
-| Operation | Why Digital |
-|-----------|-------------|
-| Layer normalization | Requires input-dependent mean and variance — changes every token |
-| Softmax | Requires a global sum over all sequence positions before normalizing |
-| Nonlinear activations (GELU, SiLU) | Curve shape incompatible with the crystal's optical nonlinearity |
-| Residual connections | Beam routing complexity; trivial as a digital vector add |
-| Embedding lookup | Discrete index — not a continuous field transformation |
+| Operation | Why digital folklore wins today |
+|-----------|----------------------------------|
+| Layer normalization | Means and variances reinvent each token visitation |
+| Softmax rows | Normalize against entire logits vector before emitting weights |
+| GELU, SiLU, similar activations | Shapes disobey naive passive nonlinear crystal tricks assumed earlier |
+| Residual bookkeeping | Honestly easier as vector adds behind orchestrator desks |
+| Embedding lookup tables | Indexes not smooth fields begging diffraction gimmicks |
 
-Everything that scales quadratically with model size — the matrix multiplies — goes in the crystal. Everything that stays digital scales linearly with embedding dimension or sequence length.
-
----
-
-## How Small the Digital Shell Is
-
-For a single transformer block at 8B-model scale:
-
-| Component | Operations |
-|-----------|-----------|
-| **Optical (matrix multiplies)** | **~157 million** |
-| Digital (all operations above) | ~109 thousand |
-
-**The digital shell is approximately 0.07% of total compute per block.**
-
-This is not a GPU workload. It is embedded hardware — a microcontroller drawing milliwatts, not kilowatts.
+Quadratic exploding matmul fantasies hitch toward crystal dreams. Everything scaling gentler stays digital homework.
 
 ---
 
-## Scaling to Trillion-Parameter Models and Long Context
+## How tiny halo compute looks on paper doodle
 
-As models scale, the digital shell remains proportionally small. The matrix multiplies grow as d² (quadratic); the digital operations grow as d or n (linear). The larger the model, the more dominant the optical side becomes.
+Single transformer-ish block modeled near 8B parameter fiction:
 
-The one challenge that emerges at scale — and that defeats GPU systems at long context — is not compute but memory: the KV cache (the stored keys and values from every past token, needed for attention over long sequences). At 1M token context on a 1T-parameter model, the naive KV footprint approaches 4 TB. On a GPU system, reading this on every forward step requires hundreds of watts of HBM bandwidth.
+| Component | Rough op tally |
+|-----------|----------------|
+| **Optical matmul avalanche** | **~157 million** |
+| Everything digital listed above pooled | roughly **109 thousand** |
 
-PHOTEX's optical architecture addresses this at the device level. The same physical principles that store model weights can absorb context state — eliminating the memory bandwidth bottleneck rather than managing it. Softmax normalization and attention scoring are handled through optical techniques that keep the digital shell in the same power envelope at million-token context as at short context.
+Digital halo near **0.07%** per-block weight in that counting exercise. Wattage behaves closer to microcontroller campfire than racks of H100 vampires draining substations metaphors exaggerate politely.
 
-Details on these mechanisms are available to qualified partners.
+Still imagination until ASIC spreadsheets become hardware measured.
 
 ---
 
-## The Net Effect
+## Trillion-parameter sketches and viciously long context
 
-At any model size, at any context length, the digital shell remains sub-watt embedded compute. Data-center scale power draw does not re-enter the picture. The optical device scales up; the digital wrapper does not.
+Matrix multiply folklore still scales quadratically while digital appendix chores scale kinder slopes. Larger imagined models widen the optical share inside back-of-envelope spreadsheets.
+
+Pain shifts from flops to DRAM drag once contexts go silly long. KV cache for every previous token blows up footprint fast. Quote I keep pasted from earlier drafts: one million tokens on roughly one trillion parameters pushes naive KV storage toward roughly four terabytes. Dragging that bundle across GPU HBM each forward stab burns hundreds of watts just feeding bandwidth addicts.
+
+Hypothesis scribbles claim similar volumetric multiplex tricks that fantasize storing weights might also stash rolling context blobs, theoretically dodging brute HBM relays instead of only compressing spreadsheets. Optical attention bookkeeping plus softmax antics supposedly keep the digital halo near the same watts envelope whether context stays short or grows toward absurdity.
+
+Those mechanisms belong in sharper appendices someday. Tonight they stay labeled hypothesis because I refuse to swear hardware proved it externally.
+
+---
+
+## Honest takeaway
+
+Digital shell modeled here stays microcontroller-ish watts while quadratic optical fantasy scales upward in charts. Sweating manufacturing yield, insertion loss detectors, coherent stability tantrums, plus packaging thermals still dominates honest engineering worry list beyond chirpy spreadsheets above.

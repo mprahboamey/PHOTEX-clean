@@ -1,86 +1,66 @@
 # Integration with AI Pipelines
 
-PHOTEX is designed to slot into existing AI infrastructure as an optical inference backend — without changing how applications, frameworks, or workflows are built today.
+Notebook musings about where PHOTEX could theoretically sit relative to stacks people already swear at. Assume nothing ships until crates exist outside my hard drive imagination.
 
 ---
 
-## The Core Idea
+## Core idea
 
-The compute-intensive part of AI inference is the forward pass: attention, MLP layers, the math. Everything else — tokenization, sampling, routing, orchestration — is already handled by the stack you run today.
+The sharp end of transformer inference hides inside forward passes juggling attention blocks and chunky MLPs. Everything outward from that hot core (tokenizer plumbing, logits sampling, batch schedulers, boring HTTP JSON) happily remains digital folklore we already tolerate.
 
-PHOTEX targets only that forward pass. The rest of your pipeline stays exactly as-is.
-
----
-
-## Architecture
+Sketch below keeps API skin familiar while fantasizing swapping one backend slab for hypothetical optics babysitting quadratic matmul avalanche only.
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
 │                  CLIENT / APPLICATION                        │
-│    (any inference client, framework, or API consumer)        │
+│    (whatever inference consumer already trusts)               │
 └──────────────────────────────────────────────────────────────┘
                              │
-                    Standard API interface
+                     normal API façade
                              │
                              ▼
 ┌──────────────────────────────────────────────────────────────┐
 │               INFERENCE ORCHESTRATOR                         │
-│  Routing · Load balancing · Tokenization · Model mapping     │
+│  routing · hashing · tokenizer glue · backlog babysitting    │
 └──────────────────────────────────────────────────────────────┘
                              │
               ┌──────────────┴──────────────┐
               │                             │
               ▼                             ▼
 ┌─────────────────────┐       ┌─────────────────────────────┐
-│   GPU / TPU Backend  │       │     PHOTEX Optical Backend  │
-│  (existing stack)    │       │   Optical forward pass only │
+│   GPU / TPU stack   │       │ Imaginary PHOTEX backend    │
+│  (baseline reality) │       │ optics-on-forward-pass only │
 └─────────────────────┘       └─────────────────────────────┘
 ```
 
-The orchestration layer speaks the same API contract as today's inference services. Clients don't need to know what's underneath.
+Clients stare at whichever API contract survives version drift. Transparent routing toggles hypothetical until hardware cooperates academically.
 
 ---
 
-## What Stays Digital vs Optical
+## Digital versus optical bookkeeping
 
-| Stage | Where It Runs |
-|-------|---------------|
-| Tokenization | Digital |
-| Embedding lookup | Digital |
-| **Forward pass (attention + MLP)** | **Optical (PHOTEX)** |
-| Logits → token sampling | Digital |
-| Detokenization | Digital |
-| Training and fine-tuning | GPU (unchanged) |
+| Stage | Where it realistically runs early drafts |
+|-------|-----------------------------------------|
+| Tokenization | Still digital CPUs |
+| Embedding lookup tables | Still digital SRAM paths |
+| **Forward avalanche (attention + MLP slabs)** | **Optical folklore target** maybe someday |
+| Logits onward through sampling gymnastics | Still digital |
+| Detoken fluff | Same tired CPUs |
 
-The optical device handles the expensive part. The bookkeeping stays digital.
-
----
-
-## Deployment Models
-
-| Mode | Description |
-|------|-------------|
-| **Managed IaaS** | PHOTEX as a hosted API. Send prompts, receive completions — same interface as any inference service. |
-| **Hybrid** | Orchestrator routes hot-path inference to PHOTEX; GPU handles fallback and cold paths. |
-| **On-premises** | PHOTEX hardware deployed in your data center. Control plane and routing are local or hybrid. |
-
-All three modes share the same API contract. Switching between them is an orchestration decision, not an application change.
+Training plus fine tuning remain GPU burdens nobody pretends vanished.
 
 ---
 
-## Adoption Path
+## Deployment fairy tales classmates sketch
 
-The typical pattern is phased: validate outputs in shadow mode, then incrementally shift inference traffic as confidence builds. The goal is full inference offload to PHOTEX, with GPUs reserved for training and fallback.
+Hybrid routing fantasies bounce traffic between reassurance GPUs and flirtatious optics nodes when metrics stable. Hosted versus on-premises arguments mirror mundane cloud chatter without promising pricing pages.
 
-Details on integration and deployment are available to qualified partners.
+Assume shadow validation plus regression nets still mandatory before courageous traffic shifts.
+
+Anything deeper waits until prototypes graduate beyond Jupyter cosplay.
 
 ---
 
-## Summary
+## Summary chatter
 
-| Question | Answer |
-|----------|--------|
-| **Where does PHOTEX plug in?** | As the optical backend for the inference forward pass, behind a standard API layer. |
-| **What changes for the customer?** | Minimal — the API contract stays the same. |
-| **What stays on GPU?** | Training, fine-tuning, tokenization, sampling, and fallback. |
-| **Business model** | Inference-as-a-Service: customer sends prompts, PHOTEX handles the optical compute. |
+Plug-in point hides behind whichever orchestrator already fronts inference today. Customer surfaces stay identical REST nonsense. GPUs pick up leftovers including training jitter. PHOTEX story targets forward hot path only assuming engineers someday align benches with marketing paragraph dreams.
