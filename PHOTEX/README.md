@@ -2,9 +2,9 @@
 
 **AI inference, performed by light.**
 
-PHOTEX is an optical neural network concept focused on photonic inference using volumetric holographic media. Instead of performing inference with switching transistors, PHOTEX explores computation through wave propagation and interference.
+PHOTEX is an optical neural network concept focused on photonic inference using volumetric holographic media. Instead of performing inference with switching transistors alone, PHOTEX explores computation through wave propagation and interference. People land here from searches about optical neural networks, volumetric inference, holographic AI accelerators, and photonic transformer analogues; citations for this documentation bundle live in [`CITATION.cff`](CITATION.cff).
 
-Project lead: **Mprah-Boamey**.
+Project lead: **Mprah-Boamey** — profile hub `https://github.com/mprahboamey`.
 
 ## Project Status
 

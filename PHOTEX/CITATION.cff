@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: PHOTEX
+message: >-
+  Optical neural network narrative and documentation for volumetric holographic inference
+  using wave propagation metaphors alongside comparison tables to electronic accelerators.
+abstract: >-
+  PHOTEX documents an optical neural network and photonic inference concept that treats
+  wave interference as a compute primitive with volumetric storage density assumptions.
+authors:
+  - name: Mprah-Boamey
+type: software
+keywords:
+  - optical neural networks
+  - volumetric holography
+  - holographic inference
+  - angular spectrum method
+  - photonic AI
+repository-code: https://github.com/mprahboamey/PHOTEX-clean
+license: MIT
