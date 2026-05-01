@@ -1,6 +1,6 @@
 # Wave Propagation and Photonic Inference
 
-This document covers the physical models underlying PHOTEX: wave optics, the Angular Spectrum Method, diffractive phase modulation, and interference-based attention.
+PHOTEX is built on a small stack of physics. This document walks through each layer: wave optics, the Angular Spectrum Method, diffractive phase modulation, and interference-based attention.
 
 ---
 
@@ -50,7 +50,7 @@ I(x, y, z) = |u(x, y, z)|² = A²(x, y, z)
 
 ## 2. Angular Spectrum Method (ASM)
 
-The ASM propagates a field from one plane to another by decomposing it into plane wave components in the Fourier domain. Each component acquires a propagation phase factor independently, reducing the computation to an FFT, a pointwise multiply, and an inverse FFT — O(N log N) per propagation step.
+The ASM propagates a field from one plane to another by decomposing it into plane wave components in the Fourier domain. Each component acquires a propagation phase factor independently, reducing the computation to an FFT, a pointwise multiply, and an inverse FFT: O(N log N) per propagation step.
 
 ### 2.1 Derivation
 

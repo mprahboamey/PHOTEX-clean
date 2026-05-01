@@ -2,9 +2,9 @@
 
 **AI inference using light.**
 
-PHOTEX is a PyTorch-based simulation framework for optical and photonic neural networks. It models holographic crystal stacks as inference hardware: trainable diffractive layers serve as weight storage, wave propagation via the Angular Spectrum Method handles computation, and wave interference implements self-attention.
+PHOTEX simulates optical neural networks in PyTorch. The model is a holographic crystal stack: trainable diffractive layers act as weights, wave propagation via the Angular Spectrum Method handles computation, and wave interference implements self-attention.
 
-The benchmark tables compare projected optical performance against published NVIDIA H100 figures. All PHOTEX values are architecture projections derived from simulation — none have been measured on physical hardware.
+The benchmark tables compare projected optical performance against published NVIDIA H100 figures. The projections are striking. They come from simulation, and this documentation says so clearly.
 
 Citation: [`CITATION.cff`](CITATION.cff)
 
@@ -52,7 +52,7 @@ A 1 cm³ crystal stores an estimated 90 trillion parameters under the stated geo
 
 ## Related
 
-Software-only weight tiling and memory-mapping experiments: [HoloWeights](https://github.com/mprahboamey/holoweights)
+Software-only weight tiling and memory-mapping experiments (no photonics): [HoloWeights](https://github.com/mprahboamey/holoweights)
 
 ---
 

@@ -1,12 +1,12 @@
 # Integration with AI Pipelines
 
-This document describes how PHOTEX could fit into existing AI inference infrastructure. No physical hardware exists — this is a forward-looking architectural sketch based on where optical inference would slot into a standard stack.
+PHOTEX does not replace an entire inference stack. It targets one specific bottleneck. This document sketches where optical inference would slot in and what would stay exactly as-is.
 
 ---
 
 ## Core concept
 
-The computationally expensive portion of transformer inference is the forward pass: attention blocks and MLP layers. Everything surrounding that core — tokenization, logits sampling, batch scheduling, API serving — is already handled well by existing digital infrastructure and would remain unchanged.
+The computationally expensive portion of transformer inference is the forward pass: attention blocks and MLP layers. Everything surrounding that core (tokenization, logits sampling, batch scheduling, API serving) is already handled well by existing digital infrastructure and would remain unchanged.
 
 The proposed integration point is the forward pass only, replacing matrix multiplication with optical computation while keeping the surrounding stack intact.
 

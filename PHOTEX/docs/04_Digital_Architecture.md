@@ -16,7 +16,7 @@ Several transformer operations depend on per-token statistics or global sequence
 | Residual addition | Straightforward vector add; no benefit from optical routing |
 | Embedding lookup | Discrete table indexing, not a continuous field operation |
 
-Operations that scale quadratically with sequence length — primarily the attention matrix multiply — are the primary optical targets.
+Operations that scale quadratically with sequence length (primarily the attention matrix multiply) are the primary optical targets.
 
 ---
 
@@ -29,7 +29,7 @@ For a transformer block modeled on an 8B parameter architecture:
 | **Optical forward pass** | **~157 million** |
 | Digital overhead (all operations above) | ~109 thousand |
 
-The digital component represents approximately **0.07%** of total operations per block. At that ratio, the digital layer's power draw is closer to microcontroller-scale than H100-scale — though this estimate has not been validated on hardware.
+The digital component represents approximately **0.07%** of total operations per block. At that ratio, the digital layer's power draw is closer to microcontroller-scale than H100-scale, though this estimate has not been validated on hardware.
 
 ---
 
@@ -37,7 +37,7 @@ The digital component represents approximately **0.07%** of total operations per
 
 The quadratic scaling of the attention matrix multiply means the optical share of total computation grows with sequence length and model size. The digital overhead operations scale more favorably, so the architectural split becomes more advantageous at larger scales.
 
-At very long context lengths, KV cache storage becomes a second bottleneck. One million tokens at one trillion parameters requires approximately four terabytes of KV cache, consuming hundreds of watts in HBM bandwidth alone. The hypothesis that volumetric holographic storage could also serve as a KV cache — reducing HBM bandwidth dependence — is noted here as a direction for future investigation. It has not been demonstrated in simulation or hardware.
+At very long context lengths, KV cache storage becomes a second bottleneck. One million tokens at one trillion parameters requires approximately four terabytes of KV cache, consuming hundreds of watts in HBM bandwidth alone. The hypothesis that volumetric holographic storage could also serve as a KV cache (reducing HBM bandwidth dependence) is noted here as a direction for future investigation. It has not been demonstrated in simulation or hardware.
 
 ---
 

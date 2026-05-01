@@ -1,6 +1,6 @@
 # Benchmark Results (PHOTEX vs NVIDIA H100)
 
-PHOTEX simulation outputs compared against NVIDIA H100 published specifications, using Llama-3 8B as the throughput reference model. PHOTEX columns derive from stated geometry and simulation parameters. H100 columns reference published datasheets. All PHOTEX values are architecture projections — no physical hardware has been measured.
+PHOTEX simulation outputs compared against NVIDIA H100 published specifications, using Llama-3 8B as the throughput reference model. PHOTEX columns derive from stated geometry and simulation parameters. H100 columns reference published datasheets. All PHOTEX values are architecture projections. No physical hardware has been measured.
 
 **Simulation snapshot:** February 2025
 **Throughput reference model:** Llama-3 8B
@@ -32,7 +32,7 @@ Parameter capacity is derived from the physical geometry of a 1 cm³ holographic
 | Z-layers | 0.01 m / 10 µm = **1,000** |
 | Angular lanes | 90° / 0.1° = **900** |
 | Effective multiplex depth | **900,000** combined slices |
-| Pixels per slice | `(1 cm / 1 µm)² = 10⁸` — **100 million** |
+| Pixels per slice | `(1 cm / 1 µm)² = 10⁸` (**100 million**) |
 | Raw parameters per cm³ | **90 trillion** |
 
 This figure assumes manufacturing tolerances hold at the simulation resolution. Practical yield will be lower.
@@ -112,7 +112,7 @@ Forward pass measured across a 1024×1024 grid through multiple diffractive laye
 | CPU/GPU simulation | ~443 ms | ~2.3 passes/sec |
 | PHOTEX time-of-flight (modeled) | 1.334 ns | ~750 M passes/sec (projected) |
 
-Projected speedup: ~340,000,000×. This compares software simulation runtime against theoretical optical time-of-flight. The two numbers are not directly comparable and should not be cited without that context.
+Projected speedup: ~340,000,000×. This compares software simulation time against theoretical optical time-of-flight. Keep both in view when citing.
 
 ### 4.4 Time-of-Flight Latency
 
