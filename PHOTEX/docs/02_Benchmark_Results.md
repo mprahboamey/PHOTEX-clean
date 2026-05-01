@@ -51,7 +51,7 @@ H100 parameter capacity is derived from HBM capacity at FP16 precision.
 | NVIDIA H100 SXM (141 GB HBM) | ~35B |
 | PHOTEX hypothetical 1 cm³ crystal | **90 T** raw · **45 T** usable (projected) |
 
-The projected density advantage is approximately **700× to 4,500× per cm³**. Note that the H100 package including HBM spans hundreds of cubic centimeters; a direct volume comparison narrows this gap.
+The projected density advantage is approximately **700× to 4,500× per cm³**. The H100 package including HBM spans hundreds of cubic centimeters; a direct volume comparison narrows this gap.
 
 ---
 
@@ -112,7 +112,7 @@ Forward pass measured across a 1024×1024 grid through multiple diffractive laye
 | CPU/GPU simulation | ~443 ms | ~2.3 passes/sec |
 | PHOTEX time-of-flight (modeled) | 1.334 ns | ~750 M passes/sec (projected) |
 
-Projected speedup: ~340,000,000×. This compares software simulation time against theoretical optical time-of-flight. Keep both in view when citing.
+Projected speedup: ~340,000,000×. This compares software simulation time against theoretical optical time-of-flight. Both figures are reported so neither gets cited in isolation.
 
 ### 4.4 Time-of-Flight Latency
 
