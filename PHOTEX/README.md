@@ -42,7 +42,7 @@ Detailed math links below.
 
 ### Related mmap tile tinkering
 
-Software-only tiling experiments without photonics cosplay wander here:
+Software-only tiling experiments (no photonics) live here:
 
 [HoloWeights](https://github.com/mprahboamey/holoweights)
 

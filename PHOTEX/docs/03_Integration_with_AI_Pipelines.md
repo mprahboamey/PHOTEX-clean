@@ -57,7 +57,7 @@ Hybrid routing fantasies bounce traffic between reassurance GPUs and flirtatious
 
 Assume shadow validation plus regression nets still mandatory before courageous traffic shifts.
 
-Anything deeper waits until prototypes graduate beyond Jupyter cosplay.
+Anything deeper waits until hardware prototypes exist outside simulation.
 
 ---
 

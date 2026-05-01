@@ -31,7 +31,7 @@ Single transformer-ish block modeled near 8B parameter fiction:
 | **Optical matmul avalanche** | **~157 million** |
 | Everything digital listed above pooled | roughly **109 thousand** |
 
-Digital halo near **0.07%** per-block weight in that counting exercise. Wattage behaves closer to microcontroller campfire than racks of H100 vampires draining substations metaphors exaggerate politely.
+Digital halo near **0.07%** per-block weight in that counting exercise. Power draw for that digital slice is closer to microcontroller territory than H100 racks — though this remains an unverified estimate.
 
 Still imagination until ASIC spreadsheets become hardware measured.
 
@@ -43,7 +43,7 @@ Matrix multiply folklore still scales quadratically while digital appendix chore
 
 Pain shifts from flops to DRAM drag once contexts go silly long. KV cache for every previous token blows up footprint fast. Quote I keep pasted from earlier drafts: one million tokens on roughly one trillion parameters pushes naive KV storage toward roughly four terabytes. Dragging that bundle across GPU HBM each forward stab burns hundreds of watts just feeding bandwidth addicts.
 
-Hypothesis scribbles claim similar volumetric multiplex tricks that fantasize storing weights might also stash rolling context blobs, theoretically dodging brute HBM relays instead of only compressing spreadsheets. Optical attention bookkeeping plus softmax antics supposedly keep the digital halo near the same watts envelope whether context stays short or grows toward absurdity.
+Hypothesis scribbles claim similar volumetric multiplex tricks that fantasize storing weights might also stash rolling context blobs, theoretically dodging brute HBM relays instead of only compressing spreadsheets. Optical attention bookkeeping plus softmax antics supposedly keep the digital halo near the same watts envelope whether context stays short or grows to very long sequences.
 
 Those mechanisms belong in sharper appendices someday. Tonight they stay labeled hypothesis because I refuse to swear hardware proved it externally.
 

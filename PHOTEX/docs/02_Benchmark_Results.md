@@ -104,7 +104,7 @@ Sticker headline ~99% hypothetical reduction per naive pass stacking those assum
 | After imagined 50% correction tax | **375 M** |
 | Conservative stack bundling averaging plus digital babysitting | **7.5 M** |
 
-Still absurd next to GPUs until reality objects.
+Still highly speculative relative to GPU hardware — pending physical validation.
 
 ### 4.3 Scale Benchmark
 
@@ -113,7 +113,7 @@ Runs smeared across 1024×1024 grid through multiple slabs as proxy for chunky f
 | Platform | Forward pass | Throughput shorthand |
 |----------|--------------|-----------------------|
 | CPU/GPU emulation | ~443 ms | ~2.3 passes per second weary |
-| PHOTEX modeled time-of-flight | 1.334 ns | ~750 M passes/sec storybook |
+| PHOTEX modeled time-of-flight | 1.334 ns | ~750 M passes/sec (projected) |
 
 Theoretical uplift hovers near **340,000,000×** purely from comparing snail simulation against optimistic ray flight.
 
