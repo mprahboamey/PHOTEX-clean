@@ -1,66 +1,63 @@
 # Integration with AI Pipelines
 
-Notebook musings about where PHOTEX could theoretically sit relative to stacks people already swear at. Assume nothing ships until crates exist outside my hard drive imagination.
+This document describes how PHOTEX could fit into existing AI inference infrastructure. No physical hardware exists — this is a forward-looking architectural sketch based on where optical inference would slot into a standard stack.
 
 ---
 
-## Core idea
+## Core concept
 
-The sharp end of transformer inference hides inside forward passes juggling attention blocks and chunky MLPs. Everything outward from that hot core (tokenizer plumbing, logits sampling, batch schedulers, boring HTTP JSON) happily remains digital folklore we already tolerate.
+The computationally expensive portion of transformer inference is the forward pass: attention blocks and MLP layers. Everything surrounding that core — tokenization, logits sampling, batch scheduling, API serving — is already handled well by existing digital infrastructure and would remain unchanged.
 
-Sketch below keeps API skin familiar while fantasizing swapping one backend slab for hypothetical optics babysitting quadratic matmul avalanche only.
+The proposed integration point is the forward pass only, replacing matrix multiplication with optical computation while keeping the surrounding stack intact.
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
 │                  CLIENT / APPLICATION                        │
-│    (whatever inference consumer already trusts)               │
 └──────────────────────────────────────────────────────────────┘
                              │
-                     normal API façade
+                     standard API layer
                              │
                              ▼
 ┌──────────────────────────────────────────────────────────────┐
 │               INFERENCE ORCHESTRATOR                         │
-│  routing · hashing · tokenizer glue · backlog babysitting    │
+│  routing · tokenizer · batch management · load balancing     │
 └──────────────────────────────────────────────────────────────┘
                              │
               ┌──────────────┴──────────────┐
               │                             │
               ▼                             ▼
 ┌─────────────────────┐       ┌─────────────────────────────┐
-│   GPU / TPU stack   │       │ Imaginary PHOTEX backend    │
-│  (baseline reality) │       │ optics-on-forward-pass only │
+│   GPU / TPU stack   │       │   PHOTEX optical backend    │
+│   (baseline)        │       │   (forward pass only)       │
 └─────────────────────┘       └─────────────────────────────┘
 ```
 
-Clients stare at whichever API contract survives version drift. Transparent routing toggles hypothetical until hardware cooperates academically.
+The client-facing API remains the same regardless of which backend handles the forward pass.
 
 ---
 
-## Digital versus optical bookkeeping
+## Digital vs. optical responsibilities
 
-| Stage | Where it realistically runs early drafts |
+| Stage | Where it runs |
 |-------|-----------------------------------------|
-| Tokenization | Still digital CPUs |
-| Embedding lookup tables | Still digital SRAM paths |
-| **Forward avalanche (attention + MLP slabs)** | **Optical folklore target** maybe someday |
-| Logits onward through sampling gymnastics | Still digital |
-| Detoken fluff | Same tired CPUs |
+| Tokenization | Digital CPU |
+| Embedding lookup | Digital SRAM |
+| **Forward pass (attention + MLP)** | **Optical (projected target)** |
+| Logits sampling and decoding | Digital |
+| Detokenization | Digital CPU |
 
-Training plus fine tuning remain GPU burdens nobody pretends vanished.
-
----
-
-## Deployment fairy tales classmates sketch
-
-Hybrid routing fantasies bounce traffic between reassurance GPUs and flirtatious optics nodes when metrics stable. Hosted versus on-premises arguments mirror mundane cloud chatter without promising pricing pages.
-
-Assume shadow validation plus regression nets still mandatory before courageous traffic shifts.
-
-Anything deeper waits until hardware prototypes exist outside simulation.
+Training and fine-tuning remain on GPU.
 
 ---
 
-## Summary chatter
+## Deployment considerations
 
-Plug-in point hides behind whichever orchestrator already fronts inference today. Customer surfaces stay identical REST nonsense. GPUs pick up leftovers including training jitter. PHOTEX story targets forward hot path only assuming engineers someday align benches with marketing paragraph dreams.
+A hybrid routing layer could direct traffic between GPU and optical backends based on load or latency metrics. Shadow validation and regression testing would be required before shifting production traffic to any new backend.
+
+Any deeper integration requires hardware prototypes outside simulation.
+
+---
+
+## Summary
+
+The integration point is narrow: the optical backend handles the forward pass hot path only. The orchestration layer, API surface, and all surrounding digital operations remain unchanged. GPU handles training, fallback inference, and everything outside the forward pass.

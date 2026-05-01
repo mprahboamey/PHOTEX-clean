@@ -1,54 +1,46 @@
 # Digital Architecture
 
-PHOTEX fantasy hands gnarly matrix multiplications to sculpted light while admitting several transformer rituals refuse to cooperate without humble silicon scaffolding. Thin digital halo stays because nobody convinced interference alone to politely normalize softmax rows yet without cheating.
+PHOTEX routes matrix-intensive operations to optical hardware while a thin digital layer handles the transformer operations that require global statistics, discrete lookups, or nonlinear activations that passive optical elements cannot perform.
 
 ---
 
-## What stays stubbornly digital
+## What remains digital
 
-Some transforms demand local statistics gathered per token before downstream pixels exist. Others need global reductions across sequences before softmax makes sense as probability table. Embedding lookup remains discrete hopping between table rows unlike continuous slabs light loves.
+Several transformer operations depend on per-token statistics or global sequence reductions that cannot be straightforwardly performed by passive optical elements:
 
-Practically categorized:
-
-| Operation | Why digital folklore wins today |
+| Operation | Why it stays digital |
 |-----------|----------------------------------|
-| Layer normalization | Means and variances reinvent each token visitation |
-| Softmax rows | Normalize against entire logits vector before emitting weights |
-| GELU, SiLU, similar activations | Shapes disobey naive passive nonlinear crystal tricks assumed earlier |
-| Residual bookkeeping | Honestly easier as vector adds behind orchestrator desks |
-| Embedding lookup tables | Indexes not smooth fields begging diffraction gimmicks |
+| Layer normalization | Requires per-token mean and variance across the feature dimension |
+| Softmax | Requires a global reduction over the full logit vector |
+| GELU, SiLU activations | Require precise nonlinear shaping not achievable with passive optics |
+| Residual addition | Straightforward vector add; no benefit from optical routing |
+| Embedding lookup | Discrete table indexing, not a continuous field operation |
 
-Quadratic exploding matmul fantasies hitch toward crystal dreams. Everything scaling gentler stays digital homework.
+Operations that scale quadratically with sequence length — primarily the attention matrix multiply — are the primary optical targets.
 
 ---
 
-## How tiny halo compute looks on paper doodle
+## Estimated digital overhead
 
-Single transformer-ish block modeled near 8B parameter fiction:
+For a transformer block modeled on an 8B parameter architecture:
 
-| Component | Rough op tally |
+| Component | Approximate operation count |
 |-----------|----------------|
-| **Optical matmul avalanche** | **~157 million** |
-| Everything digital listed above pooled | roughly **109 thousand** |
+| **Optical forward pass** | **~157 million** |
+| Digital overhead (all operations above) | ~109 thousand |
 
-Digital halo near **0.07%** per-block weight in that counting exercise. Power draw for that digital slice is closer to microcontroller territory than H100 racks — though this remains an unverified estimate.
-
-Still imagination until ASIC spreadsheets become hardware measured.
+The digital component represents approximately **0.07%** of total operations per block. At that ratio, the digital layer's power draw is closer to microcontroller-scale than H100-scale — though this estimate has not been validated on hardware.
 
 ---
 
-## Trillion-parameter sketches and viciously long context
+## Scaling behavior
 
-Matrix multiply folklore still scales quadratically while digital appendix chores scale kinder slopes. Larger imagined models widen the optical share inside back-of-envelope spreadsheets.
+The quadratic scaling of the attention matrix multiply means the optical share of total computation grows with sequence length and model size. The digital overhead operations scale more favorably, so the architectural split becomes more advantageous at larger scales.
 
-Pain shifts from flops to DRAM drag once contexts go silly long. KV cache for every previous token blows up footprint fast. Quote I keep pasted from earlier drafts: one million tokens on roughly one trillion parameters pushes naive KV storage toward roughly four terabytes. Dragging that bundle across GPU HBM each forward stab burns hundreds of watts just feeding bandwidth addicts.
-
-Hypothesis scribbles claim similar volumetric multiplex tricks that fantasize storing weights might also stash rolling context blobs, theoretically dodging brute HBM relays instead of only compressing spreadsheets. Optical attention bookkeeping plus softmax antics supposedly keep the digital halo near the same watts envelope whether context stays short or grows to very long sequences.
-
-Those mechanisms belong in sharper appendices someday. Tonight they stay labeled hypothesis because I refuse to swear hardware proved it externally.
+At very long context lengths, KV cache storage becomes a second bottleneck. One million tokens at one trillion parameters requires approximately four terabytes of KV cache, consuming hundreds of watts in HBM bandwidth alone. The hypothesis that volumetric holographic storage could also serve as a KV cache — reducing HBM bandwidth dependence — is noted here as a direction for future investigation. It has not been demonstrated in simulation or hardware.
 
 ---
 
-## Honest takeaway
+## Engineering challenges
 
-Digital shell modeled here stays microcontroller-ish watts while quadratic optical fantasy scales upward in charts. Sweating manufacturing yield, insertion loss detectors, coherent stability tantrums, plus packaging thermals still dominates honest engineering worry list beyond chirpy spreadsheets above.
+The projected numbers above are derived from simulation. Realizing them on hardware requires solving manufacturing yield, optical insertion loss, coherent stability over temperature, and packaging thermal management. These are the dominant engineering risks, not the architectural model.
